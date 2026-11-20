@@ -40,6 +40,16 @@ uv pip check --python .venv/bin/python
 
 子命令：`init`、`propose`、`preview`、`approve`、`apply`、`show`；成功向 stdout 输出一个 JSON 对象，错误退出 2 并在 stderr 给出可区分原因。详见[工作台契约](docs/workbench.md)与[合成样例](fixtures/workbench/README.md)。
 
+## 离线频道编排
+
+`radio-arrange` 把待安排接收任务与不可变固定发射编排成一份**建议**：每个 request 是否选中、选中时用哪个频道，以及每台接收设备的调谐日程。只生成建议，**不创建提案、不取得接收确认、不修改台账**；原有两个命令和公开接口保持兼容。无外部求解器，对最多 14 个 request 做带剪枝的穷举，按“utility 总和 → 换频次数 → 分配向量”的字典序求全局最优。
+
+```sh
+.venv/bin/radio-arrange --source fixtures/arrange/abc.json --output run/abc-report.json
+```
+
+业务无解时仍退出 0 并发布 `infeasible` 报告；输入契约错误或输出已存在退出 2，不发布报告、不覆盖已有目标。详见[编排契约](docs/arrange.md)与[合成样例](fixtures/arrange/README.md)。
+
 ## 契约与边界
 
 详见[数据契约](docs/contract.md)。保护圈为输入声明的筛查模型，不计算功率、天线或地形传播；不作真实无线电许可或安全判断。

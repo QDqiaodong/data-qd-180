@@ -1,0 +1,66 @@
+{
+  "stations": [
+    {
+      "id": "R",
+      "lat": 0.0,
+      "lon": 0.0,
+      "protection_radius_m": 5000
+    },
+    {
+      "id": "S",
+      "lat": 0.0,
+      "lon": 0.001,
+      "protection_radius_m": 5000
+    },
+    {
+      "id": "T0",
+      "lat": 0.0,
+      "lon": 0.002,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "T1",
+      "lat": 0.0,
+      "lon": 0.003,
+      "protection_radius_m": 1
+    }
+  ],
+  "fixed_transmissions": [
+    {
+      "id": "f0",
+      "station_id": "T0",
+      "receiver_id": "R",
+      "center_hz": 100,
+      "bandwidth_hz": 10,
+      "start": "2026-09-01T10:00:00+00:00",
+      "end": "2026-09-01T11:00:00+00:00"
+    },
+    {
+      "id": "f1",
+      "station_id": "T1",
+      "receiver_id": "S",
+      "center_hz": 100,
+      "bandwidth_hz": 10,
+      "start": "2026-09-01T10:00:00+00:00",
+      "end": "2026-09-01T11:00:00+00:00"
+    }
+  ],
+  "centers_hz": [
+    100
+  ],
+  "requests": [],
+  "receivers": [
+    {
+      "id": "R",
+      "ready_at": "2026-09-01T09:00:00+00:00",
+      "initial_center_hz": 100,
+      "switches": []
+    },
+    {
+      "id": "S",
+      "ready_at": "2026-09-01T09:00:00+00:00",
+      "initial_center_hz": 100,
+      "switches": []
+    }
+  ]
+}

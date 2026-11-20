@@ -11,6 +11,7 @@ dependencies = []
 [project.scripts]
 radio-coordinate = "spectrum.cli:main"
 radio-workbench = "spectrum.workbench_cli:main"
+radio-arrange = "spectrum.arrange_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

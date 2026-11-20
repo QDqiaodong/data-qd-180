@@ -1,0 +1,173 @@
+{
+  "stations": [
+    {
+      "id": "R",
+      "lat": 0.0,
+      "lon": 0.0,
+      "protection_radius_m": 1000
+    },
+    {
+      "id": "TA",
+      "lat": 0.0,
+      "lon": 0.02,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "TB",
+      "lat": 0.1,
+      "lon": 0.02,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "TC",
+      "lat": 0.2,
+      "lon": 0.02,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "TI",
+      "lat": 0.0,
+      "lon": 0.0005,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "U",
+      "lat": 10.0,
+      "lon": 10.0,
+      "protection_radius_m": 1000
+    }
+  ],
+  "fixed_transmissions": [
+    {
+      "id": "F",
+      "station_id": "TI",
+      "receiver_id": "U",
+      "center_hz": 200,
+      "bandwidth_hz": 10,
+      "start": "2026-09-01T10:20:00+00:00",
+      "end": "2026-09-01T10:30:00+00:00"
+    }
+  ],
+  "centers_hz": [
+    100,
+    200,
+    300
+  ],
+  "requests": [
+    {
+      "id": "A",
+      "station_id": "TA",
+      "receiver_id": "R",
+      "bandwidth_hz": 10,
+      "start": "2026-09-01T10:00:00+00:00",
+      "end": "2026-09-01T10:10:00+00:00",
+      "allowed_centers_hz": [
+        100
+      ],
+      "required": true,
+      "utility": 100
+    },
+    {
+      "id": "B",
+      "station_id": "TB",
+      "receiver_id": "R",
+      "bandwidth_hz": 10,
+      "start": "2026-09-01T10:20:00+00:00",
+      "end": "2026-09-01T10:30:00+00:00",
+      "allowed_centers_hz": [
+        200
+      ],
+      "required": false,
+      "utility": 50
+    },
+    {
+      "id": "C",
+      "station_id": "TC",
+      "receiver_id": "R",
+      "bandwidth_hz": 10,
+      "start": "2026-09-01T10:40:00+00:00",
+      "end": "2026-09-01T10:50:00+00:00",
+      "allowed_centers_hz": [
+        300
+      ],
+      "required": true,
+      "utility": 100
+    }
+  ],
+  "receivers": [
+    {
+      "id": "R",
+      "ready_at": "2026-09-01T10:00:00+00:00",
+      "initial_center_hz": 100,
+      "switches": [
+        {
+          "from_hz": 100,
+          "to_hz": 200,
+          "seconds": 600
+        },
+        {
+          "from_hz": 100,
+          "to_hz": 300,
+          "seconds": 3600
+        },
+        {
+          "from_hz": 200,
+          "to_hz": 100,
+          "seconds": 600
+        },
+        {
+          "from_hz": 200,
+          "to_hz": 300,
+          "seconds": 600
+        },
+        {
+          "from_hz": 300,
+          "to_hz": 100,
+          "seconds": 600
+        },
+        {
+          "from_hz": 300,
+          "to_hz": 200,
+          "seconds": 600
+        }
+      ]
+    },
+    {
+      "id": "U",
+      "ready_at": "2026-09-01T09:00:00+00:00",
+      "initial_center_hz": 200,
+      "switches": [
+        {
+          "from_hz": 100,
+          "to_hz": 200,
+          "seconds": 600
+        },
+        {
+          "from_hz": 100,
+          "to_hz": 300,
+          "seconds": 3600
+        },
+        {
+          "from_hz": 200,
+          "to_hz": 100,
+          "seconds": 600
+        },
+        {
+          "from_hz": 200,
+          "to_hz": 300,
+          "seconds": 600
+        },
+        {
+          "from_hz": 300,
+          "to_hz": 100,
+          "seconds": 600
+        },
+        {
+          "from_hz": 300,
+          "to_hz": 200,
+          "seconds": 600
+        }
+      ]
+    }
+  ]
+}
