@@ -28,6 +28,18 @@ uv pip check --python .venv/bin/python
 
 输入或业务规则无效、输出已存在时退出2，保留原目标；成功退出0。报告/数据库先完整生成再原子新建，无覆盖。run/为忽略目录。
 
+## 计划变更工作台
+
+`radio-workbench` 在一份本地独立台账上保存固定站点、修订式发射计划和不可变提案，可跨进程/重启继续，两个命令进程相遇时逐个生效。原 `radio-coordinate` 与 `spectrum.service.run` 行为不变。
+
+```sh
+.venv/bin/radio-workbench init    --ledger run/ledger.json --source fixtures/workbench/plan-v0.json
+.venv/bin/radio-workbench propose --ledger run/ledger.json --source fixtures/workbench/proposal-a.json
+.venv/bin/radio-workbench preview --ledger run/ledger.json --proposal proposal-a
+```
+
+子命令：`init`、`propose`、`preview`、`approve`、`apply`、`show`；成功向 stdout 输出一个 JSON 对象，错误退出 2 并在 stderr 给出可区分原因。详见[工作台契约](docs/workbench.md)与[合成样例](fixtures/workbench/README.md)。
+
 ## 契约与边界
 
 详见[数据契约](docs/contract.md)。保护圈为输入声明的筛查模型，不计算功率、天线或地形传播；不作真实无线电许可或安全判断。

@@ -1,0 +1,10 @@
+{
+  "proposal_id": "proposal-w",
+  "base_revision": 0,
+  "upserts": [
+    {"id": "w", "station_id": "S", "receiver_id": "U",
+     "center_hz": 400, "bandwidth_hz": 10,
+     "start": "2026-08-01T10:00:00+00:00", "end": "2026-08-01T11:00:00+00:00"}
+  ],
+  "remove_ids": []
+}
