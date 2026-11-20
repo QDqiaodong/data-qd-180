@@ -1,0 +1,13 @@
+{
+  "clock_epochs": [
+    {
+      "id": "E0",
+      "utc_origin": "2026-08-01T10:00:00+00:00",
+      "offset_min_us": 0,
+      "offset_max_us": 0
+    }
+  ],
+  "relative_syncs": [],
+  "executions": [],
+  "groups": []
+}

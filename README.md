@@ -28,6 +28,18 @@ uv pip check --python .venv/bin/python
 
 输入或业务规则无效、输出已存在时退出2，保留原目标；成功退出0。报告/数据库先完整生成再原子新建，无覆盖。run/为忽略目录。
 
+## 活动后执行观测复核
+
+`radio-coordinate` 增加可选参数 `--observations`：现场设备日志按各自重启纪元的计时器记录，校时只有带误差范围的证据。复核在**同一套全局 offset 取值**上穷尽判断实际有向冲突是 `certain`/`possible`/`absent`/`unobserved`，并对每组冲突给出同一时钟世界下的最少/最多发生数及可由原 `spectrum.service.run` 核对的完整见证。时钟证据联立矛盾时退出 0 并发布 `inconsistent_clocks`，保留原计划报告；契约错误仍退出 2、不发布报告。不传 `--observations` 时输出与失败语义保持原样。
+
+```sh
+.venv/bin/radio-coordinate --source fixtures/observations/rtu-plan.json \
+  --observations fixtures/observations/rtu-obs-exclusion.json \
+  --output run/rtu-review.json
+```
+
+公开纯函数 `spectrum.observations.review_executions` / `build_review_report` 可独立测试。详见[执行观测复核契约](docs/observations.md)与[合成样例](fixtures/observations/README.md)。原工作台、编排器接口与 `spectrum.service.run` 契约不变。
+
 ## 计划变更工作台
 
 `radio-workbench` 在一份本地独立台账上保存固定站点、修订式发射计划和不可变提案，可跨进程/重启继续，两个命令进程相遇时逐个生效。原 `radio-coordinate` 与 `spectrum.service.run` 行为不变。

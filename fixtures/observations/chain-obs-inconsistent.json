@@ -1,0 +1,72 @@
+{
+  "clock_epochs": [
+    {
+      "id": "E0",
+      "utc_origin": "2026-08-01T10:00:00+00:00",
+      "offset_min_us": -1000000,
+      "offset_max_us": 1000000
+    },
+    {
+      "id": "E1",
+      "utc_origin": "2026-08-01T10:00:00+00:00",
+      "offset_min_us": -1000000,
+      "offset_max_us": 1000000
+    },
+    {
+      "id": "E2",
+      "utc_origin": "2026-08-01T10:00:00+00:00",
+      "offset_min_us": -1000000,
+      "offset_max_us": 1000000
+    }
+  ],
+  "relative_syncs": [
+    {
+      "id": "sync-01",
+      "left_epoch_id": "E0",
+      "right_epoch_id": "E1",
+      "min_us": 100,
+      "max_us": 300
+    },
+    {
+      "id": "sync-12",
+      "left_epoch_id": "E1",
+      "right_epoch_id": "E2",
+      "min_us": 100,
+      "max_us": 300
+    },
+    {
+      "id": "sync-02-loop",
+      "left_epoch_id": "E0",
+      "right_epoch_id": "E2",
+      "min_us": 0,
+      "max_us": 100
+    }
+  ],
+  "executions": [
+    {
+      "transmission_id": "v",
+      "epoch_id": "E0",
+      "start_tick_us": 10000000,
+      "end_tick_us": 11000000,
+      "center_hz": 100,
+      "bandwidth_hz": 10
+    },
+    {
+      "transmission_id": "a",
+      "epoch_id": "E1",
+      "start_tick_us": 9000000,
+      "end_tick_us": 10000000,
+      "center_hz": 100,
+      "bandwidth_hz": 10
+    },
+    {
+      "transmission_id": "b",
+      "epoch_id": "E2",
+      "start_tick_us": 11000000,
+      "end_tick_us": 12000000,
+      "center_hz": 100,
+      "bandwidth_hz": 10
+    }
+  ],
+  "groups": []
+}

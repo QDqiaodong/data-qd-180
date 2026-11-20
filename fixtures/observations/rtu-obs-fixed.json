@@ -1,0 +1,58 @@
+{
+  "clock_epochs": [
+    {
+      "id": "E0",
+      "utc_origin": "2026-08-01T10:00:00+00:00",
+      "offset_min_us": 0,
+      "offset_max_us": 0
+    },
+    {
+      "id": "E1",
+      "utc_origin": "2026-08-01T10:00:00+00:00",
+      "offset_min_us": 500000,
+      "offset_max_us": 500000
+    }
+  ],
+  "relative_syncs": [],
+  "executions": [
+    {
+      "transmission_id": "v",
+      "epoch_id": "E0",
+      "start_tick_us": 10000000,
+      "end_tick_us": 11000000,
+      "center_hz": 100,
+      "bandwidth_hz": 10
+    },
+    {
+      "transmission_id": "a",
+      "epoch_id": "E1",
+      "start_tick_us": 9000000,
+      "end_tick_us": 10000000,
+      "center_hz": 100,
+      "bandwidth_hz": 10
+    },
+    {
+      "transmission_id": "b",
+      "epoch_id": "E1",
+      "start_tick_us": 11000000,
+      "end_tick_us": 12000000,
+      "center_hz": 100,
+      "bandwidth_hz": 10
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-exclusion",
+      "pairs": [
+        {
+          "victim_transmission_id": "v",
+          "interferer_transmission_id": "a"
+        },
+        {
+          "victim_transmission_id": "v",
+          "interferer_transmission_id": "b"
+        }
+      ]
+    }
+  ]
+}
