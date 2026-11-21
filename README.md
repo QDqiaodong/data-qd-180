@@ -66,4 +66,16 @@ uv pip check --python .venv/bin/python
 
 详见[数据契约](docs/contract.md)。保护圈为输入声明的筛查模型，不计算功率、天线或地形传播；不作真实无线电许可或安全判断。
 
+## 接收保护日报重算与更正
+
+`radio-protection` 按原发布与本次重算两个资料截止时刻，各自生成同一份计划的接收保护日报，并对照出“哪一段的保护结论需要更正”的清单。台站坐标与保护半径一律由台站资料决定，绝不用计划旧坐标代填；资料缺失或同级争议的时段标为未决。
+
+```sh
+.venv/bin/radio-protection --source fixtures/protection/plan.json \
+  --station-facts fixtures/protection/recompute-facts.json \
+  --output run/protection-recompute.json
+```
+
+资料缺失、有争议或没有更正都是有效结果，退出 0；契约错误退出 2，不发布报告、不覆盖已有目标。详见[重算与更正契约](docs/protection.md)与[合成样例](fixtures/protection/README.md)。原 `radio-coordinate`（含 `--observations`）、`spectrum.service.run`、工作台与编排器用法不变。
+
 样例均为本仓原创合成数据，来源见[说明](fixtures/SOURCES.md)，代码/样例MIT许可。业务演示和测试不访问网络，不需要容器或外部服务。

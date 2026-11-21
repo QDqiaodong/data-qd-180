@@ -1,0 +1,48 @@
+{
+  "stations": [
+    {
+      "id": "R",
+      "lat": 0,
+      "lon": 0,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "T",
+      "lat": 1,
+      "lon": 1,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "A",
+      "lat": 2,
+      "lon": 2,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "U",
+      "lat": 3,
+      "lon": 3,
+      "protection_radius_m": 1
+    }
+  ],
+  "transmissions": [
+    {
+      "id": "v",
+      "station_id": "T",
+      "receiver_id": "R",
+      "center_hz": 100,
+      "bandwidth_hz": 10,
+      "start": "2026-08-01T10:00:00+00:00",
+      "end": "2026-08-01T11:00:00+00:00"
+    },
+    {
+      "id": "a",
+      "station_id": "A",
+      "receiver_id": "U",
+      "center_hz": 300,
+      "bandwidth_hz": 10,
+      "start": "2026-08-01T10:00:00+00:00",
+      "end": "2026-08-01T10:10:00+00:00"
+    }
+  ]
+}

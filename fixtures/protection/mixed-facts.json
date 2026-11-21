@@ -1,0 +1,102 @@
+{
+  "window_start": "2026-08-01T10:00:00+00:00",
+  "window_end": "2026-08-01T11:00:00+00:00",
+  "published_as_of": "2026-08-01T09:00:00+00:00",
+  "revised_as_of": "2026-08-01T12:00:00+00:00",
+  "sources": [
+    {
+      "id": "duty",
+      "priority": 5
+    },
+    {
+      "id": "survey",
+      "priority": 1
+    }
+  ],
+  "events": [
+    {
+      "source_id": "duty",
+      "station_id": "R",
+      "fact_id": "r-base",
+      "known_at": "2026-08-01T08:00:00+00:00",
+      "op": "assert",
+      "effective_start": "2026-08-01T00:00:00+00:00",
+      "effective_end": "2026-08-02T00:00:00+00:00",
+      "lat": 0,
+      "lon": 0,
+      "protection_radius_m": 300
+    },
+    {
+      "source_id": "duty",
+      "station_id": "T",
+      "fact_id": "t-base",
+      "known_at": "2026-08-01T08:00:00+00:00",
+      "op": "assert",
+      "effective_start": "2026-08-01T00:00:00+00:00",
+      "effective_end": "2026-08-02T00:00:00+00:00",
+      "lat": 10,
+      "lon": 10,
+      "protection_radius_m": 1
+    },
+    {
+      "source_id": "duty",
+      "station_id": "A",
+      "fact_id": "a-base",
+      "known_at": "2026-08-01T08:00:00+00:00",
+      "op": "assert",
+      "effective_start": "2026-08-01T00:00:00+00:00",
+      "effective_end": "2026-08-02T00:00:00+00:00",
+      "lat": 0,
+      "lon": 0.002,
+      "protection_radius_m": 1
+    },
+    {
+      "source_id": "duty",
+      "station_id": "B",
+      "fact_id": "b-base",
+      "known_at": "2026-08-01T08:00:00+00:00",
+      "op": "assert",
+      "effective_start": "2026-08-01T00:00:00+00:00",
+      "effective_end": "2026-08-02T00:00:00+00:00",
+      "lat": 0,
+      "lon": 0.001,
+      "protection_radius_m": 1
+    },
+    {
+      "source_id": "duty",
+      "station_id": "U",
+      "fact_id": "u-base",
+      "known_at": "2026-08-01T08:00:00+00:00",
+      "op": "assert",
+      "effective_start": "2026-08-01T00:00:00+00:00",
+      "effective_end": "2026-08-02T00:00:00+00:00",
+      "lat": 20,
+      "lon": 20,
+      "protection_radius_m": 1
+    },
+    {
+      "source_id": "survey",
+      "station_id": "B",
+      "fact_id": "b-peer-a",
+      "known_at": "2026-08-01T11:30:00+00:00",
+      "op": "assert",
+      "effective_start": "2026-08-01T10:20:00+00:00",
+      "effective_end": "2026-08-01T10:45:00+00:00",
+      "lat": 0,
+      "lon": 0.001,
+      "protection_radius_m": 1
+    },
+    {
+      "source_id": "survey",
+      "station_id": "B",
+      "fact_id": "b-peer-b",
+      "known_at": "2026-08-01T11:30:00+00:00",
+      "op": "assert",
+      "effective_start": "2026-08-01T10:20:00+00:00",
+      "effective_end": "2026-08-01T10:45:00+00:00",
+      "lat": 0,
+      "lon": 0.005,
+      "protection_radius_m": 1
+    }
+  ]
+}
