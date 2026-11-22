@@ -1,0 +1,58 @@
+{
+  "operators": [
+    {
+      "id": "甲",
+      "credit_capacity": 2
+    },
+    {
+      "id": "乙",
+      "credit_capacity": 2
+    },
+    {
+      "id": "丙",
+      "credit_capacity": 10
+    }
+  ],
+  "station_operators": [
+    {
+      "station_id": "R",
+      "operator_id": "丙"
+    },
+    {
+      "station_id": "TA",
+      "operator_id": "丙"
+    },
+    {
+      "station_id": "TJ",
+      "operator_id": "甲"
+    },
+    {
+      "station_id": "TY",
+      "operator_id": "乙"
+    },
+    {
+      "station_id": "Z",
+      "operator_id": "甲"
+    }
+  ],
+  "commitments": [
+    {
+      "id": "cA",
+      "transmission_id": "taskA",
+      "start": "2026-09-01T10:00:00+00:00",
+      "end": "2026-09-01T10:00:00.000001+00:00",
+      "low_twice_hz": 1998,
+      "high_twice_hz": 2000,
+      "priority": 0
+    },
+    {
+      "id": "cB",
+      "transmission_id": "taskB",
+      "start": "2026-09-01T10:00:00.000001+00:00",
+      "end": "2026-09-01T10:00:00.000002+00:00",
+      "low_twice_hz": 1998,
+      "high_twice_hz": 2000,
+      "priority": 1
+    }
+  ]
+}

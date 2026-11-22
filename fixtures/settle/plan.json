@@ -1,0 +1,72 @@
+{
+  "stations": [
+    {
+      "id": "R",
+      "lat": 0,
+      "lon": 0,
+      "protection_radius_m": 5000
+    },
+    {
+      "id": "TA",
+      "lat": 5,
+      "lon": 5,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "TJ",
+      "lat": 0,
+      "lon": 0.01,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "TY",
+      "lat": 0,
+      "lon": 0.02,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "Z",
+      "lat": 30,
+      "lon": 30,
+      "protection_radius_m": 1
+    }
+  ],
+  "transmissions": [
+    {
+      "id": "taskA",
+      "station_id": "TA",
+      "receiver_id": "R",
+      "center_hz": 1000,
+      "bandwidth_hz": 2,
+      "start": "2026-09-01T10:00:00+00:00",
+      "end": "2026-09-01T10:00:00.000001+00:00"
+    },
+    {
+      "id": "taskB",
+      "station_id": "TA",
+      "receiver_id": "R",
+      "center_hz": 1000,
+      "bandwidth_hz": 2,
+      "start": "2026-09-01T10:00:00.000001+00:00",
+      "end": "2026-09-01T10:00:00.000002+00:00"
+    },
+    {
+      "id": "iJia",
+      "station_id": "TJ",
+      "receiver_id": "Z",
+      "center_hz": 1000,
+      "bandwidth_hz": 2,
+      "start": "2026-09-01T10:00:00+00:00",
+      "end": "2026-09-01T10:00:00.000002+00:00"
+    },
+    {
+      "id": "iYi",
+      "station_id": "TY",
+      "receiver_id": "Z",
+      "center_hz": 1000,
+      "bandwidth_hz": 2,
+      "start": "2026-09-01T10:00:00+00:00",
+      "end": "2026-09-01T10:00:00.000001+00:00"
+    }
+  ]
+}

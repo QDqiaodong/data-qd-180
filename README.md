@@ -78,4 +78,15 @@ uv pip check --python .venv/bin/python
 
 资料缺失、有争议或没有更正都是有效结果，退出 0；契约错误退出 2，不发布报告、不覆盖已有目标。详见[重算与更正契约](docs/protection.md)与[合成样例](fixtures/protection/README.md)。原 `radio-coordinate`（含 `--observations`）、`spectrum.service.run`、工作台与编排器用法不变。
 
+## 活动后计划损失结算草案
+
+`radio-settle` 按确认的固定计划与结算条款，起草频道履约补偿：对每份承诺把落在承诺区域内的受干扰时频块按「恰好覆盖它的责任经营方集合」分组精确计量（1 微秒 × 0.5 Hz 为一单位），再在经营方额度约束下按「全场总量 → 各承诺实付 → 各承诺内经营方发票」三层字典序最优给出补偿分配，并附逐承诺、逐经营方的对账合计。这里结算的是约定模型下的计划损失，不是对现场实测或实际传播的认定；命令不改计划、不执行付款。
+
+```sh
+.venv/bin/radio-settle --source fixtures/settle/plan.json \
+  --terms fixtures/settle/terms.json --output run/settle-report.json
+```
+
+零损失、零额度、没有可补偿责任方或没有承诺都是正常结果，退出 0；无效输入或已有目标退出 2，沿用原子新建且不覆盖约定。详见[结算契约](docs/settle.md)与[合成样例](fixtures/settle/README.md)。原 `radio-coordinate`（含 `--observations`）、`spectrum.service.run`、工作台、编排器与 `radio-protection` 用法不变。
+
 样例均为本仓原创合成数据，来源见[说明](fixtures/SOURCES.md)，代码/样例MIT许可。业务演示和测试不访问网络，不需要容器或外部服务。
