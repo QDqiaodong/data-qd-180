@@ -90,3 +90,14 @@ uv pip check --python .venv/bin/python
 零损失、零额度、没有可补偿责任方或没有承诺都是正常结果，退出 0；无效输入或已有目标退出 2，沿用原子新建且不覆盖约定。详见[结算契约](docs/settle.md)与[合成样例](fixtures/settle/README.md)。原 `radio-coordinate`（含 `--observations`）、`spectrum.service.run`、工作台、编排器与 `radio-protection` 用法不变。
 
 样例均为本仓原创合成数据，来源见[说明](fixtures/SOURCES.md)，代码/样例MIT许可。业务演示和测试不访问网络，不需要容器或外部服务。
+
+## 可公开接收统计公告
+
+`radio-bulletin` 在同一版冻结计划上，把与统计窗口正交的发射按接收站场馆与中心频率频道组归入唯一单元格，计量整数微秒交集，再按明确的**公众所知模型**审查每个统计口径（单格、整行、整列、全表合计）：只有当公开该口径的**每一种仍可能取值**后，每个受保护格都保有规定 `gap_us` 的取值跨度时才准许，否则整格扣留。准入决定本身也是公开信息，因此真实值安全但某个可能值不安全时照样扣留。判定用下界环流（确定性 Dinic 最大流，完全幺模保证整数可行）加 O(log U) 二分端点，全程整数、不逐微秒/逐可能值/逐矩阵枚举。公告带版本与版次、按请求顺序列明 `published`/`granted`/`withheld`，累计 `publications` 与 `prior` 可直接作为下次审查输入。
+
+```sh
+.venv/bin/radio-bulletin --source fixtures/bulletin/plan.json \
+  --rules fixtures/bulletin/rules-n-then-h.json --output run/bulletin.json
+```
+
+无效输入、历史与冻结计划不符或历史已泄露时退出 2，保留已有目标；有扣留仍是正常结果（退出 0），沿用原子新建、不得覆盖。详见[接收统计公告契约](docs/bulletin.md)与[合成样例](fixtures/bulletin/README.md)。原有各命令用法与公共接口不变。

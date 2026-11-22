@@ -1,0 +1,48 @@
+{
+  "stations": [
+    {
+      "id": "RN",
+      "lat": 0,
+      "lon": 0,
+      "protection_radius_m": 1000
+    },
+    {
+      "id": "TN",
+      "lat": 10,
+      "lon": 10,
+      "protection_radius_m": 1
+    },
+    {
+      "id": "RS",
+      "lat": 1,
+      "lon": 1,
+      "protection_radius_m": 1000
+    },
+    {
+      "id": "TS",
+      "lat": 11,
+      "lon": 11,
+      "protection_radius_m": 1
+    }
+  ],
+  "transmissions": [
+    {
+      "id": "n-h",
+      "station_id": "TN",
+      "receiver_id": "RN",
+      "center_hz": 1000,
+      "bandwidth_hz": 2,
+      "start": "2026-11-01T00:00:00+00:00",
+      "end": "2026-11-01T00:00:00.000001+00:00"
+    },
+    {
+      "id": "s-h",
+      "station_id": "TS",
+      "receiver_id": "RS",
+      "center_hz": 2000,
+      "bandwidth_hz": 2,
+      "start": "2026-11-01T00:00:00+00:00",
+      "end": "2026-11-01T00:00:00.000001+00:00"
+    }
+  ]
+}

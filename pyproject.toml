@@ -14,6 +14,7 @@ radio-workbench = "spectrum.workbench_cli:main"
 radio-arrange = "spectrum.arrange_cli:main"
 radio-protection = "spectrum.protection_cli:main"
 radio-settle = "spectrum.settle_cli:main"
+radio-bulletin = "spectrum.bulletin_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -1,0 +1,115 @@
+{
+  "edition_id": "ed-2026-bulletin",
+  "window": {
+    "start": "2026-11-01T00:00:00+00:00",
+    "end": "2026-11-02T00:00:00+00:00"
+  },
+  "venues": [
+    "N",
+    "S"
+  ],
+  "channel_groups": [
+    {
+      "id": "H",
+      "low_hz": 100,
+      "high_hz": 3000
+    },
+    {
+      "id": "L",
+      "low_hz": 3000,
+      "high_hz": 6000
+    }
+  ],
+  "receiver_venues": [
+    {
+      "receiver_id": "RN",
+      "venue_id": "N"
+    },
+    {
+      "receiver_id": "RS",
+      "venue_id": "S"
+    }
+  ],
+  "bounds": [
+    {
+      "caliber": {
+        "scope": "cell",
+        "venue_id": "N",
+        "group_id": "H"
+      },
+      "low": 0,
+      "high": 2
+    },
+    {
+      "caliber": {
+        "scope": "cell",
+        "venue_id": "N",
+        "group_id": "L"
+      },
+      "low": 0,
+      "high": 2
+    },
+    {
+      "caliber": {
+        "scope": "cell",
+        "venue_id": "S",
+        "group_id": "H"
+      },
+      "low": 0,
+      "high": 2
+    },
+    {
+      "caliber": {
+        "scope": "row",
+        "venue_id": "N"
+      },
+      "low": 1,
+      "high": 2
+    },
+    {
+      "caliber": {
+        "scope": "column",
+        "group_id": "H"
+      },
+      "low": 2,
+      "high": 3
+    },
+    {
+      "caliber": {
+        "scope": "cell",
+        "venue_id": "S",
+        "group_id": "L"
+      },
+      "low": 0,
+      "high": 0
+    }
+  ],
+  "protected": [
+    {
+      "cell": {
+        "venue_id": "N",
+        "group_id": "H"
+      },
+      "gap_us": 1
+    }
+  ],
+  "prior": {
+    "edition_id": "ed-2026-bulletin",
+    "revision": 0,
+    "publications": []
+  },
+  "requests": [
+    {
+      "caliber": {
+        "scope": "row",
+        "venue_id": "N"
+      }
+    },
+    {
+      "caliber": {
+        "scope": "column",
+        "group_id": "H"
+      }
+    }
+  ]
+}
